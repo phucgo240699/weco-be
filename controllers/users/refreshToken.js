@@ -27,12 +27,12 @@ const refreshToken = async (req, res) => {
     const accessToken = jwt.sign(
       { userId: user._id },
       process.env.ACCESS_TOKEN_KEY,
-      { expiresIn: "10000ms" }
+      { expiresIn: "1h" }
     );
     const refreshToken = jwt.sign(
       { userId: user._id },
       process.env.REFRESH_TOKEN_KEY,
-      { expiresIn: "1h" }
+      { expiresIn: "1d" }
     );
     
     const data = {
