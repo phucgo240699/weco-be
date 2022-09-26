@@ -37,9 +37,15 @@ const signIn = async (req, res) => {
       process.env.ACCESS_TOKEN_KEY,
       { expiresIn: "1h" }
     );
+    const refreshToken = jwt.sign(
+      { userId: user._id },
+      process.env.REFRESH_TOKEN_KEY,
+      { expiresIn: "1d" }
+    );
     
     const data = {
       accessToken,
+      refreshToken,
       id: user._id
     }
     return res.status(StatusCode.success).json({ data });
