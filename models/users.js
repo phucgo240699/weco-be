@@ -23,6 +23,9 @@ const Users = new Schema(
       required: true,
       default: false
     },
+    avatar: {
+      type: String
+    },
     isDeleted: {
       type: Boolean,
       required: true,

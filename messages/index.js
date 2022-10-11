@@ -16,6 +16,15 @@ const messages = {
       existedEmail: 'authentication.signUp.existedEmail',
       verifyEmailFail: 'authentication.signUp.verifyEmailFail'
     }
+  },
+  posts: {
+    missingAuthor: 'posts.missingAuthor',
+    missingTitle: 'posts.missingTitle',
+    missingThumbnail: 'posts.missingThumbnail',
+    missingContent: 'posts.missingContent',
+    notFoundDetail: 'posts.notFoundDetail',
+    isNotAuthor: 'posts.isNotAuthor',
+    authorNotExist: 'posts.authorNotExist'
   }
 }
 

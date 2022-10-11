@@ -1,9 +1,10 @@
-const Posts = require("../../models/posts")
+const {Posts} = require("../../models/posts")
 const { StatusCode } = require("../../constants/index");
 
-const getAll = async (req, res) => {
+const getAllPosts = async (req, res) => {
     try {
         const posts = await Posts.find()
+        .select('title thumbnail author')
         res.status(StatusCode.success).json({
             data: posts
         })
@@ -14,4 +15,4 @@ const getAll = async (req, res) => {
     }
 }
 
-module.exports = { getAll }
+module.exports = { getAllPosts }
