@@ -3,7 +3,7 @@ const messages = require("../../messages")
 
 const handleCreateBody = (body) => {
   let errors = []
-  if (!get(body, 'authorId')) {
+  if (!get(body, 'author')) {
     errors.push(messages.posts.missingAuthor)
   }
   if (!get(body, 'title')) {
@@ -20,7 +20,7 @@ const handleCreateBody = (body) => {
     errors,
     body: {
       ...pick(body,
-        'authorId',
+        'author',
         'title',
         'thumbnailUrl',
         'content')
@@ -32,7 +32,7 @@ const handleUpdateBody = (body) => {
   return {
     body: {
       ...pick(body,
-        'authorId',
+        'author',
         'title',
         'thumbnailUrl',
         'content')

@@ -11,7 +11,7 @@ const createPost = async (req, res) => {
   try {
     let sessions = []
     const { body, errors: bodyErrors } = handleCreateBody(req.body)
-    const authorId = get(body, 'authorId')
+    const authorId = get(body, 'author')
     if (!isEmpty(bodyErrors)) {
       return res.status(StatusCode.notAcceptable).json({
         errors: bodyErrors

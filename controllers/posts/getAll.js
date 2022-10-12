@@ -4,7 +4,7 @@ const { StatusCode } = require("../../constants/index");
 const getAllPosts = async (req, res) => {
     try {
         const posts = await Posts.find()
-        .select('title thumbnail authorId').populate('authorId', '_id name avatarUrl')
+        .select('title thumbnailUrl author').populate('author', '_id name avatarUrl')
         res.status(StatusCode.success).json({
             data: posts
         })
