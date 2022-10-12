@@ -1,18 +1,18 @@
 const messages = require("../../messages/index");
-const { pick, isNil, get } = require("lodash")
+const { pick, get } = require("lodash")
 
 const handleSignUpBody = (body) => {
-  if (isNil(get(body, 'email'))) {
+  if (!(get(body, 'email'))) {
     return {
       error: messages.authentication.signUp.missingEmail
     }
   }
-  if (isNil(get(body, 'password'))) {
+  if (!(get(body, 'password'))) {
     return {
       error: messages.authentication.signUp.missingPassword
     }
   }
-  if (isNil(get(body, 'name'))) {
+  if (!(get(body, 'name'))) {
     return {
       error: messages.authentication.signUp.missingName
     }
@@ -29,12 +29,12 @@ const handleSignUpBody = (body) => {
 }
 
 const handleSignInBody = (body) => {
-  if (isNil(get(body, 'email'))) {
+  if (!(get(body, 'email'))) {
     return {
       error: messages.authentication.signUp.missingEmail
     }
   }
-  if (isNil(get(body, 'password'))) {
+  if (!(get(body, 'password'))) {
     return {
       error: messages.authentication.signUp.missingPassword
     }

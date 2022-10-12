@@ -12,14 +12,27 @@ const Posts = new Schema(
       type: String,
       required: true
     },
+    content: {
+      type: String,
+      required: true
+    },
+    authorId: {
+      type: Schema.Types.ObjectId,
+      ref: 'users',
+      required: true
+    },
     isDeleted: {
-        type: Boolean,
-        required: true,
-        default: false,
-        index: true
+      type: Boolean,
+      required: true,
+      default: false,
+      index: true
     }
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("posts", Posts);
+const result = {
+  Posts: mongoose.model("posts", Posts)
+}
+
+module.exports = result

@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 4000
 app.use(express.json())
 app.use(cors())
 
-app.use('/api/posts', authenticateToken, require('./routes/posts'))
+app.use('/api/posts', require('./routes/posts'))
 app.use('/api/users', require('./routes/users'))
 app.get('/users/emailConfirmation/:emailVerificationCode', async (req, res) => {
     try {
