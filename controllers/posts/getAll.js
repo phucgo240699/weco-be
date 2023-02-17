@@ -3,8 +3,7 @@ const { StatusCode } = require("../../constants/index");
 
 const getAllPosts = async (req, res) => {
     try {
-        const posts = await Posts.find()
-        .select('title thumbnail author')
+        const posts = await Posts.find().select('title thumbnailUrl author')
         res.status(StatusCode.success).json({
             data: posts
         })
